@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test02</title>
+	<style>
+		img {width: 30px; height: 30px; cursor:pointer;}
+		.wrap {width: 960px; height: 400px;}
+		.drag {
+			right: 10px; top: 10px; width: 200px; height: 100px;
+		    position: fixed; border-style: solid;
+		    background: white;
+		 }
+		.rmc { text-align: center; cursor: default; background: yellow;}
+		.btn {display:flex; margin-top:20px; margin-left:20px;}
+		.b1 {order: 1;}
+		.font_size {order: 2; background: yellow; width: 50px;
+					height: 20px; text-align: center; margin-top:5px;}
+		.b2 {order: 3;}
+	</style>
+	
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="jquery-ui-1.13.2/jquery-ui.js"></script>
+<script>
+		font= 15;
+		$(document).ready(function() { 
+			$("#draggable").draggable();
+			
+			$("img.b1").click(function(){
+				$("div.wrap").css({"font-size": font+=3});
+				$("dic.font_size").text(font);
+			});
+			
+			$("img.b2").click(function() {
+				$("div.wrap").animate({fontSize: font-=3 });
+				$("div.font_size").text(font);
+			});
+		});
+	</script>
+</head>
+<body>
+ 	<div class="wrap">
+		<h1>오늘의 소설</h1>
+		
+		<h3>오늘도 덥다</h3><br>
+		<h3>내일도 덥다</h3><br>
+		<h3>모래는 바다</h3>
+	</div>
+ 	<div id="draggable" class="drag">
+	 	<div class="rmc">리모콘</div>
+	 	<div class="btn">
+		 	<img class="b1" src="images/add.png">
+		 	<div class="font_size">15</div>
+		 	<img class="b2" src="images/sub.jpg">
+	 	</div>
+	</div>
+ 	
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex04</title>
+	<style type="text/css">
+		.im {color: blue; font-size: 30pt;}
+	</style>
+	
+	<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+	<script type="text/javascript">
+		function addCss(){
+			$("div").addClass("im");
+		}
+		const rmCss = () => {$("div").removeClass("im"); }
+	</script>
+</head>
+<body>
+	<div>제이쿼리</div>
+	<button onclick="addCss()">css 적용</button>
+	<button onclick="rmCss()">css 해제</button>
+	
+</body>
+</html>

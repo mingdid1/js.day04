@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Menu - Default functionality</title>
+  <link rel="stylesheet" href="../jquery-ui-1.13.2/jquery-ui.css">
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script src="../jquery-ui-1.13.2/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#menu" ).menu();
+  } );
+  </script>
+  <style>
+  .ui-menu { width: 150px; }
+  .drag {
+      width: 200px; height: 100px;
+      background-color: red; border-style: solid;
+   }
+  
+  </style>
+<script>
+   $(document).ready(function() { $("#draggable").draggable(); });
+</script>
+  
+</head>
+<body>
+ <div id="draggable" class="drag"> <p>Drag me around</p> </div>
+ 
+ 
+ 
+ 
+<ul id="menu">
+  <li>
+    <div>Item 1</div>
+  </li>
+  <li>
+    <div>Item 2</div>
+    <ul>
+      <li>
+        <div>Item 3-1</div>
+      </li>
+      <li>
+        <div>Item 3-2</div>
+      </li>
+      <li>
+        <div>Item 3-3</div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <div>Item 3</div>
+    <ul>
+      <li>
+        <div>Item 3-1</div>
+      </li>
+      <li>
+        <div>Item 3-2</div>
+      </li>
+      <li>
+        <div>Item 3-3</div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <div>Item 4</div>
+  </li>
+  <li>
+    <div>Item 5</div>
+  </li>
+</ul>
+ 
+ 
+</body>
+</html>

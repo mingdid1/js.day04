@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex06</title>
+</head>
+<body>
+	<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+	<script type="text/javascript">
+		function appendVal(){$("#txt").append("내용추가<br>");}
+		const htmlVal = () => {$("#txt").html("내용추가");}
+		const inputVal =() =>{
+			$("#val02").val( $("#val01").val()); // #val01 내용을 가져와서 val02에 넣기
+			$("#val01").val(""); // val01의 내용을 공백으로 만들기
+		} 
+	</script>
+
+	<div id="txt"></div><hr>
+	<input type="text" id="val01"><br>
+	<input type="text" id="val02"><br>
+	
+	<button onclick="inputVal()">input 변경</button>
+	<button onclick="appendVal()">내용 추가</button>
+	<button onclick="htmlVal()">내용 교체</button>
+
+</body>
+</html>

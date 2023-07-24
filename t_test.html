@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+	move = 0;
+	cnt = 1;
+	startTime = 0;
+	startGame = 0;
+	window.addEventListener("keydown", (e) => {
+		console.log( e );
+		if (e.key == "Enter" && move <= 500)
+			moveImg();
+	});
+	function moveImg(){
+		if (startGame == 0) {
+			if (move == 0)
+				myTimer()
+			move += 50
+			$("img").css({
+				left : move + 'px'
+			});
+			if (cnt == 10)
+				cnt = 1
+			$("#pic1").attr("src", "images/p" + cnt + ".png")
+			cnt++
+			if (move > 500) {
+				endGame();
+				startGame = 1;
+			}
+		}
+	}
+	function endGame() {
+		clearTimeout(e);
+		$("#demo").html((new Date().getTime() - startTime) / 1000 + "초")
+	}
+	function init() {
+		startGame = 0;
+		move = 0;
+		cnt = 1;
+		startTime = 0;
+		clearTimeout(e);
+		$("#demo").html("~~~ 준비 ~~~")
+	}
+	$(function() {
+		$("button.move").click(moveImg);
+		$("button.init").click(function() {
+			init()
+			$("img").animate({
+				left : move + 'px'
+			});
+		});
+	});
+	var e;
+	function myTimer() {
+		if (startTime == 0)
+			startTime = new Date().getTime()
+		$("#demo").html(new Date().getTime())
+		e = setTimeout("myTimer()", 10)
+	}
+	
+</script>
+<div align="center" id="demo">~~~ 준비 ~~~</div>
+<hr>
+<div style="width:650px; border-right: 1px solid; ">
+<img id="pic1" src="images/p1.png" width="130" height="100"
+	style="position: relative" />
+</div>
+<hr>
+<button class="move">달리기</button>
+<button class="init">초기화</button>
+
+</body>
+</html>
